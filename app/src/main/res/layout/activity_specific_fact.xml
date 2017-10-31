@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fbg"
+    tools:context="com.example.raghvendrapandey.knowledgeworld.RandomFact">
+    <include layout="@layout/app_bar" android:id="@+id/main_page_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_above="@+id/sf"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_page_toolbar"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="368dp"
+            android:layout_height="50dp"
+            android:spinnerMode="dropdown"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="10dp"
+            style="@android:style/Widget.Spinner.DropDown"
+            android:background="@drawable/spin_bg"
+            android:entries="@array/categories"
+            android:gravity="center_vertical"
+            android:prompt="@string/spinner_title"
+            android:textAlignment="center"
+            android:textSize="24dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/spinner1"
+
+            android:layout_alignStart="@+id/spinner1"
+            android:text="Category:"
+            android:textColor="@android:color/background_light"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sRes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="92dp"
+            android:background="@drawable/button_bg"
+            android:text="Know the fact"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            android:layout_below="@+id/spinner1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/specRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sRes"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/text_bg"
+            android:overScrollMode="ifContentScrolls"
+            android:padding="50dp"
+            android:textSize="24dp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/sf"
+        style="@style/Animation.AppCompat.Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:background="?attr/actionModeSplitBackground"
+        android:text="for random facts"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/setdata"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/relativeLayout"
+        android:layout_alignRight="@+id/relativeLayout"
+        android:layout_alignTop="@+id/relativeLayout"
+        android:layout_marginTop="91dp"
+        android:defaultFocusHighlightEnabled="?attr/isLightTheme"
+        android:ems="10"
+        android:selectAllOnFocus="false"
+        android:textColor="@android:color/holo_red_light"
+        android:textColorHighlight="@android:color/darker_gray"
+        android:textColorHint="#808080"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="set data "
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/setdata"
+        android:layout_alignBottom="@+id/setdata"
+        android:layout_alignLeft="@+id/relativeLayout"
+        android:layout_alignStart="@+id/relativeLayout" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/setdata"
+        android:layout_alignLeft="@+id/setdata"
+        android:layout_alignStart="@+id/setdata"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/slash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/date"
+        android:layout_alignBottom="@+id/date"
+        android:layout_toEndOf="@+id/date"
+        android:layout_toRightOf="@+id/date"
+        android:text="/"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/month"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/setdata"
+        android:layout_toEndOf="@+id/slash"
+        android:layout_toRightOf="@+id/slash"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
